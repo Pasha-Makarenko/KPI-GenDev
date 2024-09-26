@@ -2,11 +2,9 @@ const counter = (arr, hash) => {
     for (const item of arr) {
         let type = typeof item;
 
-        if (!hash[type]){
-            hash[type] = 1
-        } else {
-            hash[type]++
-        }
+        hash[type] 
+            ? hash[type]++ 
+            : hash[type] = 1
     }
 }
 
