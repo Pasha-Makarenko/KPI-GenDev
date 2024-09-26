@@ -7,6 +7,8 @@ const initHash = hash => {
 }
 
 const counter = (arr, hash) => {
+    initHash(hash)
+
     for (const item of arr) {
         if (SCALAR_TYPES.includes(typeof item)) {
             hash[typeof item]++
@@ -14,8 +16,7 @@ const counter = (arr, hash) => {
     }
 }
 
-const hash = {}
-initHash(hash)
+const hash = {}
 
 const arr = [ true, "hello", 5, 12, -200, false, false, "word" ]
 counter(arr, hash)
